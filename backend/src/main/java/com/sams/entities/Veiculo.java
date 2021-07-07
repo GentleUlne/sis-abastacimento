@@ -28,8 +28,11 @@ public class Veiculo implements Serializable {
 	private String patrimonio;
 	private String chassi;
 	private String versao;
+	
+	
+	
 	@Column(name = "capacidade_tanque")
-	private Integer capacidadeTanque;
+	private String capacidadeTanque;
 	@Column(name = "tipo_combustivel")
 	@Enumerated(EnumType.ORDINAL)
 	private Combustivel tipoCombustivel;
@@ -40,7 +43,7 @@ public class Veiculo implements Serializable {
 	public Veiculo() {}
 
 	public Veiculo(Long id, Integer ano, String placa, String renavan, String patrimonio, String chassi, String versao,
-			Integer capacidadeTanque, Combustivel tipoCombustivel, Tipo tipo) {
+			String capacidadeTanque, Combustivel tipoCombustivel, Tipo tipo) {
 		this.id = id;
 		this.ano = ano;
 		this.placa = placa;
@@ -109,11 +112,11 @@ public class Veiculo implements Serializable {
 		this.versao = versao;
 	}
 
-	public Integer getCapacidadeTanque() {
+	public String getCapacidadeTanque() {
 		return capacidadeTanque;
 	}
 
-	public void setCapacidadeTanque(Integer capacidadeTanque) {
+	public void setCapacidadeTanque(String capacidadeTanque) {
 		this.capacidadeTanque = capacidadeTanque;
 	}
 
@@ -156,6 +159,11 @@ public class Veiculo implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public void setRenavam(String renavam) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

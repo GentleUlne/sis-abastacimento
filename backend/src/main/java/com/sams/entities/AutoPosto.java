@@ -37,7 +37,7 @@ public class AutoPosto implements Serializable {
 		this.nomeFantasia = nomeFantasia;
 		this.telefone = telefone;
 		this.email = email;
-		CNPJ = cNPJ;
+		this.CNPJ = cNPJ;
 		this.endereco = endereco;
 		this.cidade = cidade;
 	}

@@ -27,7 +27,7 @@ public AutoPostoDTO() {
 
 
 public AutoPostoDTO(Long id, String nomeFantasia, String telefone, String email, String cNPJ, String endereco) {
-	super();
+	
 	this.id = id;
 	this.nomeFantasia = nomeFantasia;
 	this.telefone = telefone;
@@ -35,6 +35,7 @@ public AutoPostoDTO(Long id, String nomeFantasia, String telefone, String email,
 	CNPJ = cNPJ;
 	this.endereco = endereco;
 }
+
 
 
 
