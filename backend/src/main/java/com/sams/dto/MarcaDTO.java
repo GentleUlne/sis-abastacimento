@@ -2,6 +2,7 @@ package com.sams.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotBlank;
 
 import com.sams.entities.Marca;
 
@@ -12,6 +13,7 @@ public class MarcaDTO implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	 private Long id;
+	 @NotBlank(message = "o campo é obrigatório")
 	  private String descricao;
 	
 	  public MarcaDTO() {

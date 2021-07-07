@@ -3,6 +3,8 @@ package com.sams.resources;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -44,7 +46,7 @@ public class LotacaoResource {
     	}
     
     @PostMapping
-    public ResponseEntity<LotacaoDTO> insert(@RequestBody LotacaoDTO dto){
+    public ResponseEntity<LotacaoDTO> insert(@Valid @RequestBody LotacaoDTO dto){
     	dto = service.insert(dto);
     	// Quando retornar 201 objeto criado, por padrão retorna também o endereço do recurso
     	URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();

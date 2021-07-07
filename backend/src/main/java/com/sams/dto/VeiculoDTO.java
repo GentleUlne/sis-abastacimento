@@ -2,6 +2,8 @@ package com.sams.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import com.sams.entities.Veiculo;
 
@@ -12,13 +14,23 @@ public class VeiculoDTO implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	 private Long id;
+	 @NotBlank(message = "o campo é obrigatório")
 	  private Integer ano; 
+	 @Size(min = 7, max = 7, message = "o tamanho da placa deve ser de 7 characteres, sendo os três primeiros letras.")
+	 @NotBlank(message = "o campo é obrigatório")
 	  private String placa;
+	 @Size(min = 9, max = 9, message = "o tamanho do placa deve ser de 9 characteres.")
+	 @NotBlank(message = "o campo é obrigatório")
 	  private String renavam;
+	 @NotBlank(message = "o campo é obrigatório")
 	  private String patrimonio;
+	 @NotBlank(message = "o campo é obrigatório")
 	  private String chassi;
+	 @NotBlank(message = "o campo é obrigatório")
 	  private String versao;
+	 @NotBlank(message = "o campo é obrigatório")
 	  private String capacidadeTanque;
+	 @NotBlank(message = "o campo é obrigatório")
 	  private String tipoCombustivel;
 	  public VeiculoDTO() {
 
@@ -30,6 +42,7 @@ public class VeiculoDTO implements Serializable{
 			String versao, String capacidadeTanque, String tipoCombustivel) {
 		super();
 		this.id = id;
+		
 		this.ano = ano;
 		this.placa = placa;
 		this.renavam = renavam;

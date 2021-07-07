@@ -2,6 +2,12 @@ package com.sams.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.br.CNPJ;
+
 import com.sams.entities.AutoPosto;
 
 public class AutoPostoDTO implements Serializable{
@@ -11,9 +17,15 @@ public class AutoPostoDTO implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	  private Long id;
+	  @Size(min = 8, max = 43, message = "o tamanho minímo de 8 characteres e maximo 43 characteres")
+	  @NotBlank(message = "o campo é obrigatório")
 	  private String nomeFantasia;
+	  @NotBlank(message = "o campo é obrigatório")
 	  private String telefone;
+	  @NotBlank(message = "o campo é obrigatório")
+	  @Email
 	  private String email;
+	  @CNPJ(message = "o CNPJ está incorreto" )
 	  private String CNPJ;
 	  private String endereco;
 

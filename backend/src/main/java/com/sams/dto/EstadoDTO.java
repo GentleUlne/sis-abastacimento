@@ -2,6 +2,8 @@ package com.sams.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotBlank;
+
 import com.sams.entities.Estado;
 
 public class EstadoDTO implements Serializable{
@@ -11,6 +13,7 @@ public class EstadoDTO implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	 private Long id;
+	 @NotBlank(message = "o campo é obrigatório")
 	  private String UF;
 	
 	  public EstadoDTO() {

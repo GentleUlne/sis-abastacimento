@@ -2,6 +2,8 @@ package com.sams.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotBlank;
+
 import com.sams.entities.Lotacao;
 
 public class LotacaoDTO implements Serializable{
@@ -11,10 +13,15 @@ public class LotacaoDTO implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	  private Long id;
+	  @NotBlank(message = "o campo é obrigatório")
 	  private String descricao;
+	  @NotBlank(message = "o campo é obrigatório")
 	  private String endereco;
+	  @NotBlank(message = "o campo é obrigatório")
 	  private String email;
+	  @NotBlank(message = "o campo é obrigatório")
 	  private String site;
+	  @NotBlank(message = "o campo é obrigatório")
 	  private String telefone;
 
 
