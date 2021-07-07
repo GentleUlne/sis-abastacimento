@@ -22,7 +22,7 @@ import com.sams.services.CidadeService;
 
 
 @RestController
-@RequestMapping(value = "/Cidade")
+@RequestMapping(value = "/Cidades")
 public class CidadeResource {
 	
 	@Autowired

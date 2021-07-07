@@ -15,13 +15,13 @@ public class Estado implements Serializable {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String UF;
+	private String uf;
 	
 	public Estado() {}
 
-	public Estado(Long id, String UF) {
+	public Estado(Long id, String uf) {
 		this.id = id;
-		this.UF = UF;
+		this.uf = uf;
 	}
 
 	public Long getId() {
@@ -33,11 +33,11 @@ public class Estado implements Serializable {
 	}
 
 	public String getUF() {
-		return UF;
+		return uf;
 	}
 
-	public void setUF(String uF) {
-		UF = uF;
+	public void setUF(String uf) {
+		this.uf = uf;
 	}
 
 	@Override
@@ -64,5 +64,7 @@ public class Estado implements Serializable {
 			return false;
 		return true;
 	}
+
+	
 	
 }

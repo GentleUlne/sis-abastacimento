@@ -22,7 +22,7 @@ import com.sams.services.AutoPostoService;
 
 
 @RestController
-@RequestMapping(value = "/Auto_Posto")
+@RequestMapping(value = "/AutoPostos")
 public class AutoPostoResource {
 	
 	@Autowired

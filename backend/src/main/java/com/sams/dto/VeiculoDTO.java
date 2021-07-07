@@ -19,7 +19,7 @@ public class VeiculoDTO implements Serializable{
 	 @Size(min = 7, max = 7, message = "o tamanho da placa deve ser de 7 characteres, sendo os três primeiros letras.")
 	 @NotBlank(message = "o campo é obrigatório")
 	  private String placa;
-	 @Size(min = 9, max = 9, message = "o tamanho do placa deve ser de 9 characteres.")
+	 @Size(min = 9, max = 9, message = "o tamanho do renavam deve ser de 9 characteres.")
 	 @NotBlank(message = "o campo é obrigatório")
 	  private String renavam;
 	 @NotBlank(message = "o campo é obrigatório")
