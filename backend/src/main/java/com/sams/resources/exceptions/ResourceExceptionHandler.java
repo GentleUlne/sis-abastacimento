@@ -11,6 +11,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.sams.services.exceptions.DataBaseException;
 import com.sams.services.exceptions.ResourceNotFoundException;
 
 
@@ -28,7 +29,18 @@ public class ResourceExceptionHandler {
 		return ResponseEntity.status(status).body(error);
 	}
 	
-	
+	@ExceptionHandler(DataBaseException.class)
+	public ResponseEntity<StandardError> dataBase(DataBaseException e, HttpServletRequest request){
+		HttpStatus status = HttpStatus.BAD_REQUEST;
+		StandardError err = new StandardError();
+		err.setTimestamp(Instant.now());
+		err.setStatus(status.value());
+		err.setError("Database exception");
+		err.setMessage(e.getMessage());
+		err.setPath(request.getRequestURI());
+		return ResponseEntity.status(status).body(err);
+	}
+
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<ValidationError> entityNotFound(MethodArgumentNotValidException e, HttpServletRequest request){
