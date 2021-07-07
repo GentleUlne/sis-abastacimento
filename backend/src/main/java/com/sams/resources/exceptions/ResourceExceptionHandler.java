@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.sams.services.exceptions.ResourceNotFoundException;
 
+
 @ControllerAdvice
 public class ResourceExceptionHandler {
 	@ExceptionHandler(ResourceNotFoundException.class)
@@ -35,12 +36,14 @@ public class ResourceExceptionHandler {
 		ValidationError error = new ValidationError();
 		error.setTimestamp(Instant.now());
 		error.setStatus(status.value());
-		error.setError("Validation Exception");
+		error.setError("Resource not found");
 		error.setMessage(e.getMessage());
-		for(FieldError fe: e.getBindingResult().getFieldError()) {
+		error.setPath(request.getRequestURI());
+		
+		
+		for(FieldError fe : e.getBindingResult().getFieldErrors() ) {
 			error.addError(fe.getField(), fe.getDefaultMessage());
 		}
-		error.setPath(request.getRequestURI());
 		return ResponseEntity.status(status).body(error);
 	}
 	
