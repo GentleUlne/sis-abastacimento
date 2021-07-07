@@ -20,7 +20,9 @@ public class AutoPosto implements Serializable {
 	private Long id;
 	@Column(name = "nome_fantasia")
 	private String nomeFantasia;
+	@Column(name = "telefone")
 	private String telefone;
+	@Column(name = "email")
 	private String email;
 	@Column(name = "cnpj")
 	private String CNPJ;
