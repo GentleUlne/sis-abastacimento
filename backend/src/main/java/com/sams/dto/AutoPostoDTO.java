@@ -45,7 +45,7 @@ public AutoPostoDTO(Long id, String nomeFantasia, String telefone, String email,
 	this.nomeFantasia = nomeFantasia;
 	this.telefone = telefone;
 	this.email = email;
-	CNPJ = cNPJ;
+	this.CNPJ = cNPJ;
 	this.endereco = endereco;
 }
 
@@ -187,6 +187,12 @@ public AutoPostoDTO (AutoPosto entity) {
 	
 	this.id = entity.getId();
 	this.nomeFantasia = entity.getNomeFantasia();
+
+	this.telefone = entity.getTelefone();
+	
+	this.CNPJ = entity.getCNPJ();
+	
+	this.endereco = entity.getEndereco();
 }
 
 

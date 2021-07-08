@@ -80,7 +80,7 @@ public class TipoDTO implements Serializable{
 public TipoDTO (Tipo entity) {
 	
 	this.id = entity.getId();
-
+	this.descricao = entity.getDescricao();
 }  
 
 

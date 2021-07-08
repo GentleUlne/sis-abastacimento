@@ -82,7 +82,7 @@ public class ModeloDTO implements Serializable{
 public ModeloDTO ( Modelo entity) {
 	
 	this.id = entity.getId();
-
+     this.descricao = entity.getDescricao();
 }  
 
 

@@ -82,7 +82,8 @@ public class CidadeDTO implements Serializable{
 public CidadeDTO ( Cidade entity) {
 	
 	this.id = entity.getId();
-
+    this.nome  = entity.getNome() ;
+	
 }  
 
 

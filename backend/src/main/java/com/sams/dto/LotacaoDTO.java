@@ -109,11 +109,7 @@ public void setTelefone(String telefone) {
 }
 
 
-public LotacaoDTO (Lotacao entity) {
-	
-	this.id = entity.getId();
 
-}
 
 
 public static long getSerialversionuid() {
@@ -176,7 +172,15 @@ public boolean equals(Object obj) {
 		return false;
 	return true;
 }
-
+public LotacaoDTO ( Lotacao entity) {
+	
+	this.id = entity.getId();
+	this.descricao = entity.getDescricao();
+	this.endereco = entity.getEndereco();
+	this.email = entity.getEmail();
+	this.site = entity.getSite();
+	this.telefone = entity.getTelefone();
+}  
 
 
 }

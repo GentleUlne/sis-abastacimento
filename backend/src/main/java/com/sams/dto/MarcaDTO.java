@@ -81,6 +81,7 @@ public class MarcaDTO implements Serializable{
 public MarcaDTO ( Marca entity) {
 	
 	this.id = entity.getId();
+	this.descricao = getDescricao();
 
 }  
 

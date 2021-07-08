@@ -80,7 +80,7 @@ public class EstadoDTO implements Serializable{
 public EstadoDTO ( Estado entity) {
 	
 	this.id = entity.getId();
-
+    this.uf = entity.getUF();
 }  
 
 

@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import com.sams.entities.Tipo;
 import com.sams.entities.Veiculo;
 
 public class VeiculoDTO implements Serializable{
@@ -53,11 +54,7 @@ public class VeiculoDTO implements Serializable{
 		this.tipoCombustivel = tipoCombustivel;
 	}
 	
-	public VeiculoDTO(Veiculo entity) {
-		
-		this.id = entity.getId();
-		this.placa = entity.getPlaca();
-	}
+	
 
 	public Long getId() {
 		return id;
@@ -114,5 +111,20 @@ public class VeiculoDTO implements Serializable{
 		this.tipoCombustivel = tipoCombustivel;
 	}
 	  
+	public VeiculoDTO (Veiculo entity) {
+		
+		this.id = entity.getId();
+		this.ano = entity.getAno();
+		this.placa = entity.getPlaca();
+		this.renavam = entity.getRenavan();
+		this.patrimonio = entity.getPatrimonio();
+      	this.chassi = entity.getChassi();
+		this.versao = entity.getVersao();
+		this.capacidadeTanque = entity.getCapacidadeTanque();
+	//	this.tipoCombustivel = entity.getTipoCombustivel();
+		
+	}  
+
+
 
 }
