@@ -193,6 +193,7 @@ public AutoPostoDTO (AutoPosto entity) {
 	this.CNPJ = entity.getCNPJ();
 	
 	this.endereco = entity.getEndereco();
+	this.email  = entity.getEmail();
 }
 
 

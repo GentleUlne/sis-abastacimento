@@ -3,6 +3,7 @@ package com.sams.entities;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,10 +18,11 @@ public class Marca implements Serializable {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String descricao;
+
 	@OneToMany(mappedBy = "marca")
 	private List<Modelo> modelos;
-	
+	@Column(name = "descricao")
+	private String descricao;
 	public Marca() {}
 
 	public Marca(Long id, String descricao) {

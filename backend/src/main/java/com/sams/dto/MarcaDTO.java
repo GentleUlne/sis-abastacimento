@@ -47,11 +47,12 @@ public class MarcaDTO implements Serializable{
 
 
 
+
+
 @Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
@@ -65,11 +66,6 @@ public class MarcaDTO implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		MarcaDTO other = (MarcaDTO) obj;
-		if (descricao == null) {
-			if (other.descricao != null)
-				return false;
-		} else if (!descricao.equals(other.descricao))
-			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -81,7 +77,7 @@ public class MarcaDTO implements Serializable{
 public MarcaDTO ( Marca entity) {
 	
 	this.id = entity.getId();
-	this.descricao = getDescricao();
+	this.descricao = entity.getDescricao();
 
 }  
 

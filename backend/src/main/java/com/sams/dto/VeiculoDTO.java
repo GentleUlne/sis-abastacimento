@@ -7,6 +7,7 @@ import javax.validation.constraints.Size;
 
 import com.sams.entities.Tipo;
 import com.sams.entities.Veiculo;
+import com.sams.entities.enums.Combustivel;
 
 public class VeiculoDTO implements Serializable{
 
@@ -32,7 +33,9 @@ public class VeiculoDTO implements Serializable{
 	 @NotBlank(message = "o campo é obrigatório")
 	  private String capacidadeTanque;
 	 @NotBlank(message = "o campo é obrigatório")
-	  private String tipoCombustivel;
+	 
+	 
+	//  private Combustivel tipoCombustivel;
 	  public VeiculoDTO() {
 
 	}
@@ -40,7 +43,7 @@ public class VeiculoDTO implements Serializable{
 	  
 	  
 	public VeiculoDTO(Long id, Integer ano, String placa, String renavam, String patrimonio, String chassi,
-			String versao, String capacidadeTanque, String tipoCombustivel) {
+			String versao, String capacidadeTanque, Combustivel tipoCombustivel) {
 		super();
 		this.id = id;
 		
@@ -51,7 +54,7 @@ public class VeiculoDTO implements Serializable{
 		this.chassi = chassi;
 		this.versao = versao;
 		this.capacidadeTanque = capacidadeTanque;
-		this.tipoCombustivel = tipoCombustivel;
+//		this.tipoCombustivel = tipoCombustivel;
 	}
 	
 	
@@ -104,12 +107,16 @@ public class VeiculoDTO implements Serializable{
 	public void setCapacidadeTanque(String capacidadeTanque) {
 		this.capacidadeTanque = capacidadeTanque;
 	}
-	public String getTipoCombustivel() {
-		return tipoCombustivel;
-	}
-	public void setTipoCombustivel(String tipoCombustivel) {
-		this.tipoCombustivel = tipoCombustivel;
-	}
+	
+	//public Combustivel getTipoCombustivel() {
+//		return tipoCombustivel;
+	//}
+//
+
+
+	//public void setTipoCombustivel(Combustivel tipoCombustivel) {
+	//	this.tipoCombustivel = tipoCombustivel;
+	//}
 	  
 	public VeiculoDTO (Veiculo entity) {
 		
